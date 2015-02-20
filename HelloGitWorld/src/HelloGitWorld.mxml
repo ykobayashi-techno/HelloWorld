@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
-					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" fontFamily="メイリオ"
 					   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:components="flatspark.components.*">
 	<s:layout>
 		<s:VerticalLayout paddingTop="8" paddingRight="8" paddingBottom="8" paddingLeft="8"/>
 	</s:layout>
 	<fx:Script>
 		<![CDATA[
+			import mx.collections.ArrayCollection;
+			
 			import flatspark.enums.BrandColorEnum;
 			import flatspark.enums.ButtonSizeEnum;
+			import flatspark.enums.TextInputSizeEnum;
 			import flatspark.skins.ButtonSkin;
 			import flatspark.utils.AwesomeUtils;
 			
@@ -16,16 +19,37 @@
 				trace("click Button");
 			}
 			
+			[Bindable]
+			private var dataProvider:ArrayCollection = new ArrayCollection(["Label1", "テスト2", "項目3"]);
 		]]>
 	</fx:Script>
+	<fx:Declarations>
+	</fx:Declarations>
+	<s:HGroup>
+		<s:VGroup>
+			<s:Button label="ボタン"/>
+			<s:Button label="Flatボタン" fontFamily="メイリオ" chromeColor="red" color="white" height="{ButtonSizeEnum.Normal}" skinClass="flatspark.skins.ButtonSkin"/>
+			<components:ButtonIcon iconFont="{AwesomeUtils.fa_upload}" brand="{BrandColorEnum.Success}" height="{ButtonSizeEnum.Large}" click="buttonicon1_clickHandler(event)"/>
+			<components:ButtonIcon iconFont="{AwesomeUtils.fa_download}" brand="{BrandColorEnum.Primary}" height="{ButtonSizeEnum.Large}" click="buttonicon1_clickHandler(event)"/>
+			<s:CheckBox skinClass="flatspark.skins.CheckBoxSkin" label="CheckBox"/>
+		
+		</s:VGroup>
+		<s:VGroup>
+			<s:HGroup>
+				<s:RadioButton label="Test 1" skinClass="flatspark.skins.RadioButtonSkin"/>
+				<s:RadioButton label="Test 2" skinClass="flatspark.skins.RadioButtonSkin"/>
+			</s:HGroup>
+			<s:DropDownList skinClass="flatspark.skins.DropDownListSkin" height="{ButtonSizeEnum.Normal}" dataProvider="{dataProvider}" prompt="選択無"/>
+			<s:ComboBox skinClass="flatspark.skins.ComboBoxSkin" height="{ButtonSizeEnum.Small}"/>
+			<components:TextInputIcon iconFont="{AwesomeUtils.fa_user}" height="{TextInputSizeEnum.Small}"/>
+		</s:VGroup>
+	</s:HGroup>
 	
-	<s:Button label="ボタン"/>
-	<s:Button label="Flatボタン" skinClass="flatspark.skins.ButtonSkin"  color="black" height="{ButtonSizeEnum.Small}"/>
-	<components:ButtonIcon iconFont="{AwesomeUtils.fa_upload}" brand="{BrandColorEnum.Success}" height="{ButtonSizeEnum.Large}" click="buttonicon1_clickHandler(event)"/>
-	<components:ButtonIcon iconFont="{AwesomeUtils.fa_download}" brand="{BrandColorEnum.Primary}" height="{ButtonSizeEnum.Large}" click="buttonicon1_clickHandler(event)"/>
+	
 	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_arrow_circle_o_right}" fontSize="20"/>
 	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_adjust}" fontSize="20"/>
 	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_anchor}" fontSize="20"/>
 	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_github}" fontSize="20"/>
 	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_linux}" fontSize="50"/>
+	
 </s:WindowedApplication>

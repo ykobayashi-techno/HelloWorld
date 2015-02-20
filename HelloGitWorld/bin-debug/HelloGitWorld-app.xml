@@ -46,7 +46,7 @@
 	<initialWindow>
 		<!-- The main SWF or HTML file of the application. Required. -->
 		<!-- Note: In Flash Builder, the SWF reference is set automatically. -->
-		<content>[この値は Flash Builder の出力ファイル app.xml に上書きされます。]</content>
+		<content>HelloGitWorld.swf</content>
 		
 		<!-- The title of the main window. Optional. -->
 		<!-- <title></title> -->

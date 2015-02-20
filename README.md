@@ -14,4 +14,4 @@ SourceCode
 
 <s:Label text="HelloWorld."/>
 ```
-aaaaa
+![サンプル](sample.png "サンプル")

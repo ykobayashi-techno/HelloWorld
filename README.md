@@ -15,5 +15,3 @@ SourceCode
 <s:Label text="HelloWorld."/>
 ```
 ![サンプル](sample.png "サンプル")
-
-別ブランチのReadMeFileをいじるよ！

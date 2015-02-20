@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
 					   xmlns:s="library://ns.adobe.com/flex/spark" 
-					   xmlns:mx="library://ns.adobe.com/flex/mx">
+					   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:components="flatspark.components.*">
+	<s:layout>
+		<s:VerticalLayout paddingTop="8" paddingRight="8" paddingBottom="8" paddingLeft="8"/>
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import flatspark.enums.BrandColorEnum;
+			import flatspark.enums.ButtonSizeEnum;
+			import flatspark.skins.ButtonSkin;
+			import flatspark.utils.AwesomeUtils;
+			
+			private function buttonicon1_clickHandler(event:MouseEvent):void {
+				trace("click Button");
+			}
+			
+		]]>
+	</fx:Script>
 	
+	<s:Button label="ボタン"/>
+	<s:Button label="Flatボタン" skinClass="flatspark.skins.ButtonSkin"  color="black" height="{ButtonSizeEnum.Small}"/>
+	<components:ButtonIcon iconFont="{AwesomeUtils.fa_upload}" brand="{BrandColorEnum.Success}" height="{ButtonSizeEnum.Large}" click="buttonicon1_clickHandler(event)"/>
+	<components:ButtonIcon iconFont="{AwesomeUtils.fa_download}" brand="{BrandColorEnum.Primary}" height="{ButtonSizeEnum.Large}" click="buttonicon1_clickHandler(event)"/>
+	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_arrow_circle_o_right}" fontSize="20"/>
+	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_adjust}" fontSize="20"/>
+	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_anchor}" fontSize="20"/>
+	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_github}" fontSize="20"/>
+	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_linux}" fontSize="50"/>
 </s:WindowedApplication>

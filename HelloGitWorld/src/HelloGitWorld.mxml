@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
-					   xmlns:s="library://ns.adobe.com/flex/spark" fontFamily="メイリオ"
-					   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:components="flatspark.components.*">
+					   xmlns:s="library://ns.adobe.com/flex/spark" fontFamily="メイリオ" width="630" height="320"
+					   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:components="flatspark.components.*" fontSize="15">
 	<s:layout>
 		<s:VerticalLayout paddingTop="8" paddingRight="8" paddingBottom="8" paddingLeft="8"/>
 	</s:layout>
@@ -29,7 +29,7 @@
 		<s:VGroup>
 			<s:Button label="ボタン"/>
 			<s:Button label="Flatボタン" fontFamily="メイリオ" chromeColor="red" color="white" height="{ButtonSizeEnum.Normal}" skinClass="flatspark.skins.ButtonSkin"/>
-			<components:ButtonIcon iconFont="{AwesomeUtils.fa_upload}" brand="{BrandColorEnum.Success}" height="{ButtonSizeEnum.Large}" click="buttonicon1_clickHandler(event)"/>
+			<components:ButtonIcon label="Flatボタン2" iconFont="{AwesomeUtils.fa_upload}" brand="{BrandColorEnum.Success}" height="{ButtonSizeEnum.Large}" click="buttonicon1_clickHandler(event)"/>
 			<components:ButtonIcon iconFont="{AwesomeUtils.fa_download}" brand="{BrandColorEnum.Primary}" height="{ButtonSizeEnum.Large}" click="buttonicon1_clickHandler(event)"/>
 			<s:CheckBox skinClass="flatspark.skins.CheckBoxSkin" label="CheckBox"/>
 		
@@ -39,17 +39,31 @@
 				<s:RadioButton label="Test 1" skinClass="flatspark.skins.RadioButtonSkin"/>
 				<s:RadioButton label="Test 2" skinClass="flatspark.skins.RadioButtonSkin"/>
 			</s:HGroup>
-			<s:DropDownList skinClass="flatspark.skins.DropDownListSkin" height="{ButtonSizeEnum.Normal}" dataProvider="{dataProvider}" prompt="選択無"/>
-			<s:ComboBox skinClass="flatspark.skins.ComboBoxSkin" height="{ButtonSizeEnum.Small}"/>
+			<s:DropDownList skinClass="flatspark.skins.DropDownListSkin" dataProvider="{dataProvider}" prompt="選択無"/>
+			<s:ComboBox skinClass="flatspark.skins.ComboBoxSkin" dataProvider="{dataProvider}"/>
 			<components:TextInputIcon iconFont="{AwesomeUtils.fa_user}" height="{TextInputSizeEnum.Small}"/>
 		</s:VGroup>
+		
+		<s:HGroup>
+			<s:VGroup height="100%" horizontalAlign="right">
+				<s:Label height="100%" text="名前" verticalAlign="middle"/>
+				<s:Label height="100%" text="ふりがな" verticalAlign="middle"/>
+				<s:Label height="100%" fontFamily="FontAwesome" text="{AwesomeUtils.fa_location_arrow}" verticalAlign="middle"/>
+			</s:VGroup>
+			
+			<s:VGroup>
+				<components:TextInputIcon iconFont="{AwesomeUtils.fa_user}" fontFamily="メイリオ"/>
+				<components:TextInputIcon fontFamily="メイリオ"/>
+				<components:TextInputIcon fontFamily="メイリオ"/>
+			</s:VGroup>
+		</s:HGroup>
 	</s:HGroup>
-	
-	
-	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_arrow_circle_o_right}" fontSize="20"/>
-	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_adjust}" fontSize="20"/>
-	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_anchor}" fontSize="20"/>
-	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_github}" fontSize="20"/>
-	<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_linux}" fontSize="50"/>
-	
+	<s:TileGroup>
+		<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_arrow_circle_o_right}" fontSize="20"/>
+		<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_adjust}" fontSize="20"/>
+		<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_anchor}" fontSize="20"/>
+		<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_github}" fontSize="20"/>
+		<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_linux}" fontSize="20"/>
+		<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_bell}" fontSize="20"/>
+	</s:TileGroup>
 </s:WindowedApplication>

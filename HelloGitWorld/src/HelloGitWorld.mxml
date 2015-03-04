@@ -66,4 +66,19 @@
 		<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_linux}" fontSize="20"/>
 		<s:Label fontFamily="FontAwesome" text="{AwesomeUtils.fa_bell}" fontSize="20"/>
 	</s:TileGroup>
+	<s:Group width="100" height="100">
+		<s:Graphic id="addIconDisplay"  height="100%" width="100%" viewHeight="{addIconDisplay.height}" viewWidth="{addIconDisplay.height}">
+			<s:filters>
+				<s:BevelFilter angle="270" blurX="2" blurY="2" distance="1" strength="2" quality="2" highlightAlpha="0"/>
+			</s:filters>
+			<s:Path id="iconPath" blendMode="normal" alpha=".85" verticalCenter="0" horizontalCenter="0" rotation="0"
+					data="M 20 20 L 20 80 L 80 50 L 20 20"
+					>
+				<s:fill>
+					<s:SolidColor color="0x555555"/>
+				</s:fill>
+			</s:Path>
+		</s:Graphic>
+	</s:Group>
+	
 </s:WindowedApplication>

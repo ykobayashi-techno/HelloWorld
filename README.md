@@ -16,5 +16,6 @@
 SourceCode
 
 <s:Label text="HelloWorld."/>
+<s:Label text="HelloWorld."/>
 ```
 ![サンプル](sample.png "サンプル")

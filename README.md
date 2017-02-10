@@ -12,9 +12,11 @@
  + c
  + d
 
-```
+``` mxml
 SourceCode
 
+<s:Label text="HelloWorld./>
+<s:TextInput text="aaaa"/>
 <s:Label text="HelloWorld./>
 <s:TextInput text="aaaa"/>
 ```
